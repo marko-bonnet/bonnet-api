@@ -3,10 +3,6 @@ require("dotenv").config();
 const axios = require("axios");
 const cron = require("node-cron");
 const { faker } = require("@faker-js/faker");
-const express = require('express');
-const app = express();
-
-const port = process.env.PORT | 3000
 
 function refreshToken() {
   return axios
@@ -105,11 +101,3 @@ async function requestSuggest() {
 
   cronjob.start();
 })();
-
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
-
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
-})
