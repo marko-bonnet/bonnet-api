@@ -97,5 +97,7 @@ async function requestSuggest() {
     }
   );
 
+  console.log('deploy start')
+
   cronjob.start();
 })();
